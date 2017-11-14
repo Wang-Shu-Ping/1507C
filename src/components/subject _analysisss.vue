@@ -1,5 +1,6 @@
 <template>
     <div class="subject">
+       
         <div class="subject_table">
           <table class="table">
             <thead>
@@ -22,16 +23,16 @@
       </div>
     </div>
 </template>
+       
+           
 <script>
 export default {};
 </script>
 <style>
 .table {
-  float: left;
   width: 50%;
-  margin-bottom: 20px;
-
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
 .subject_table tr {
   height: 40px;
@@ -43,7 +44,6 @@ export default {};
 .subject_table tr th {
   width: 1%;
   color: #fff;
-  text-align: center;
   text-align: center;
 }
 .subject_table tbody tr th {

@@ -11,7 +11,9 @@ var router = new VueRouter({
 var store = new Vuex.Store({
     state:{
         school_range_obj:[],
-        school_area_obj:[]
+        school_area_obj:[],
+        school_major_obj: [],
+        school_majorss_obj: []
     },
     mutations:{
         update_range:function (state,data) {
@@ -19,6 +21,12 @@ var store = new Vuex.Store({
         },
         update_area:function (state, data) {
             state.school_area_obj = data
+        },
+        update_major:function(state,data){
+            state.school_major_obj = data.slice(0,14);
+        },
+        update_majorss: function (state, data) {
+            state.school_majorss_obj = data.slice(14);
         },
         reset_school_range:function (state,item) {
             let arr;

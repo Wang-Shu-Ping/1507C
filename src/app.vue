@@ -25,6 +25,7 @@ import routes from './routes/routes.config';
     *{
         margin:0;
         padding:0;
+        cursor: pointer;
     }
     .container{
         width:1200px;
