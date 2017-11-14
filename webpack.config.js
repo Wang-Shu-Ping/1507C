@@ -20,7 +20,11 @@ module.exports = {
        ]
     },
     plugins:[
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({
+            "DEVELOPMENT":JSON.stringify(true)
+            
+        })
     ],
     devtool:'inline-source-map',
     resolve:{

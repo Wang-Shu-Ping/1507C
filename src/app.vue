@@ -7,7 +7,10 @@
             <router-link :to="{name:'college'}" tag="li">高校检索</router-link>
             <router-link :to="{name:'major'}" tag="li">专业检索</router-link>
         </div>
-        <router-view></router-view>
+        <keep-alive :include="'overall'">
+                <router-view></router-view>
+        </keep-alive>
+        
     </div>
 </template>
 
@@ -18,6 +21,9 @@ Vue.use(VueRouter)
 import routes from './routes/routes.config';
     export default {
         name:'app',
+        data(){
+            return {}
+        }
         
     }  
 </script>

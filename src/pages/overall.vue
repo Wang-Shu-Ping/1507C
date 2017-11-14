@@ -34,21 +34,14 @@ import school_subject from "../components/subject _analysis";
 import school_subjectss from "../components/subject _analysisss";
 import table_wrap from "../components/table_wrap.vue";
 import table_row from "../components/table_row.vue";
+
 export default {
-  //   name: "overall",
+  name: "overall",
   data: function() {
     return {
       table_title: [],
       table_list: []
     };
-  },
-  components: {
-    "school-range": school_range,
-    "school-area": school_area,
-    "school-subject": school_subject,
-    "school-subjectss": school_subjectss,
-    "table-wrap": table_wrap,
-    "table-row": table_row
   },
   computed: {
     selected_range_item: function() {
@@ -82,7 +75,6 @@ export default {
 
     this.$http.get("src/data/major.json").then(function(res) {
       vm.$store.commit("update_major", res.data.result.analysisData);
-      //   console.log(res.data.result.analysisData);
     });
 
     this.$http.get("src/data/overall.json").then(function(res) {
@@ -98,7 +90,22 @@ export default {
     clearArea: function() {
       this.$store.commit("clear_area");
     }
+  },
+  components: {
+    "school-range": school_range,
+    "school-area": school_area,
+    "school-subject": school_subject,
+    "school-subjectss": school_subjectss,
+    "table-wrap": table_wrap,
+    "table-row": table_row
+  },
+  activated:function(){
+    console.log("kkkk")
+  },
+  deactivated:function(){
+    console.log('lll')
   }
+
 };
 </script>
 <style >

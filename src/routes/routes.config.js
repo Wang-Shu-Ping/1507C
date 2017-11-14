@@ -1,4 +1,6 @@
-import overall from '../pages/overall'
+import overall from '../pages/overall';
+
+import seek from "../components/seek.vue";
 var routes = [
     {
        path:'/',
@@ -7,13 +9,17 @@ var routes = [
     {
         name:'overall',
         path:'/overall',
-        component: overall
+        component: overall,
+        meta:{
+            data:true
+        }
     },
     {
         name: 'college',
         path: '/college',
-        component: {
-            template: '<h1>高校</h1>'
+        component: seek,
+        meta: {
+            data: false
         }
     },
     {
@@ -21,6 +27,9 @@ var routes = [
         path: '/major',
         component: {
             template: '<h1>专业</h1>'
+        },
+        meta: {
+            data: true
         }
     }
 ]

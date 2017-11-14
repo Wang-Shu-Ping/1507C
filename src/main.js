@@ -5,6 +5,9 @@ import routes from './routes/routes.config';
 Vue.use(VueRouter)
 import Vuex from 'vuex';
 Vue.use(Vuex)
+
+import mocker from './axios/mockApi.js'
+
 var router = new VueRouter({
     routes
 })
@@ -112,5 +115,10 @@ var vm = new Vue({
     store,
     render:function (createElement) {
         return createElement(app)
+    },
+    mounted:function(){
+        this.$http.get("/chooseExam/selectedConditions").then(res=>{
+            console.log(res.data)
+        })
     }
 })
